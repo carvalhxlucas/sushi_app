@@ -128,11 +128,57 @@ class _MenuPageState extends State<MenuPage> {
 
           Expanded(
               child: ListView.builder(
-                itemCount: foodMenu.length,
-                itemBuilder: (context, index) => FoodTile(
-                  food: foodMenu[index],
-                ),
-          ))
+            scrollDirection: Axis.horizontal,
+            itemCount: foodMenu.length,
+            itemBuilder: (context, index) => FoodTile(
+              food: foodMenu[index],
+            ),
+          )
+          ),
+
+          const SizedBox(height: 10,),
+
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              borderRadius: BorderRadius.circular(20),
+            ),
+            margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Row(
+                  children: [
+                    // image
+                    Image.asset('assets/img/hossomaki2.png', height: 60,),
+
+                    const SizedBox(height: 20,),
+
+                    // name and price
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // name
+                        Text("Salmon Eggs", style: GoogleFonts.dmSerifDisplay(fontSize: 18),),
+
+                        const SizedBox(height: 10,),
+
+                        // price
+                        Text('\$21.00', style: TextStyle(color: Colors.grey[700]),)
+                      ],
+                    ),
+
+                    // favorite
+                    const Icon(
+                      Icons.favorite_outline,
+                      color: Colors.grey,
+                      size: 28,
+                    )
+                  ],
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
