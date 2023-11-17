@@ -136,7 +136,7 @@ class _MenuPageState extends State<MenuPage> {
           )
           ),
 
-          const SizedBox(height: 10,),
+          const SizedBox(height: 30,),
 
           Container(
             decoration: BoxDecoration(
@@ -146,6 +146,7 @@ class _MenuPageState extends State<MenuPage> {
             margin: const EdgeInsets.only(left: 25, right: 25, bottom: 25),
             padding: const EdgeInsets.all(20),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
@@ -167,6 +168,8 @@ class _MenuPageState extends State<MenuPage> {
                         Text('\$21.00', style: TextStyle(color: Colors.grey[700]),)
                       ],
                     ),
+
+                    const SizedBox(width: 120,),
 
                     // favorite
                     const Icon(
